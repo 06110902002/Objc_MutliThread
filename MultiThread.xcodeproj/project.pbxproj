@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0EDF11210AFB6F00B71F83 /* BingFaNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EDF10210AFB6F00B71F83 /* BingFaNSOperation.m */; };
+		6B0EDF14210B0BCE00B71F83 /* VC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0EDF13210B0BCE00B71F83 /* VC2ViewController.m */; };
 		6B227B19210AA61200A1A8CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B18210AA61200A1A8CC /* AppDelegate.m */; };
 		6B227B1C210AA61300A1A8CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B1B210AA61300A1A8CC /* ViewController.m */; };
 		6B227B1F210AA61300A1A8CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B227B1D210AA61300A1A8CC /* Main.storyboard */; };
@@ -15,6 +17,7 @@
 		6B227B27210AA61400A1A8CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B26210AA61400A1A8CC /* main.m */; };
 		6B227B31210AA61400A1A8CC /* MultiThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B30210AA61400A1A8CC /* MultiThreadTests.m */; };
 		6B227B3C210AA61400A1A8CC /* MultiThreadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B3B210AA61400A1A8CC /* MultiThreadUITests.m */; };
+		6B227B4B210AED5F00A1A8CC /* CustomNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B4A210AED5F00A1A8CC /* CustomNSOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B0EDF0F210AFB6F00B71F83 /* BingFaNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BingFaNSOperation.h; sourceTree = "<group>"; };
+		6B0EDF10210AFB6F00B71F83 /* BingFaNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BingFaNSOperation.m; sourceTree = "<group>"; };
+		6B0EDF12210B0BCE00B71F83 /* VC2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2ViewController.h; sourceTree = "<group>"; };
+		6B0EDF13210B0BCE00B71F83 /* VC2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2ViewController.m; sourceTree = "<group>"; };
 		6B227B14210AA61200A1A8CC /* MultiThread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThread.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B227B17210AA61200A1A8CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B227B18210AA61200A1A8CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,8 @@
 		6B227B37210AA61400A1A8CC /* MultiThreadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiThreadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B227B3B210AA61400A1A8CC /* MultiThreadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadUITests.m; sourceTree = "<group>"; };
 		6B227B3D210AA61400A1A8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B227B49210AED5F00A1A8CC /* CustomNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNSOperation.h; sourceTree = "<group>"; };
+		6B227B4A210AED5F00A1A8CC /* CustomNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNSOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B0EDF15210B0BDA00B71F83 /* Dispatch_Queues */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EDF12210B0BCE00B71F83 /* VC2ViewController.h */,
+				6B0EDF13210B0BCE00B71F83 /* VC2ViewController.m */,
+			);
+			path = Dispatch_Queues;
+			sourceTree = "<group>";
+		};
 		6B227B0B210AA61200A1A8CC = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +119,7 @@
 		6B227B16210AA61200A1A8CC /* MultiThread */ = {
 			isa = PBXGroup;
 			children = (
+				6B0EDF15210B0BDA00B71F83 /* Dispatch_Queues */,
 				6B227B17210AA61200A1A8CC /* AppDelegate.h */,
 				6B227B18210AA61200A1A8CC /* AppDelegate.m */,
 				6B227B1A210AA61200A1A8CC /* ViewController.h */,
@@ -110,6 +129,10 @@
 				6B227B22210AA61400A1A8CC /* LaunchScreen.storyboard */,
 				6B227B25210AA61400A1A8CC /* Info.plist */,
 				6B227B26210AA61400A1A8CC /* main.m */,
+				6B227B49210AED5F00A1A8CC /* CustomNSOperation.h */,
+				6B227B4A210AED5F00A1A8CC /* CustomNSOperation.m */,
+				6B0EDF0F210AFB6F00B71F83 /* BingFaNSOperation.h */,
+				6B0EDF10210AFB6F00B71F83 /* BingFaNSOperation.m */,
 			);
 			path = MultiThread;
 			sourceTree = "<group>";
@@ -262,9 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0EDF11210AFB6F00B71F83 /* BingFaNSOperation.m in Sources */,
 				6B227B1C210AA61300A1A8CC /* ViewController.m in Sources */,
+				6B0EDF14210B0BCE00B71F83 /* VC2ViewController.m in Sources */,
 				6B227B27210AA61400A1A8CC /* main.m in Sources */,
 				6B227B19210AA61200A1A8CC /* AppDelegate.m in Sources */,
+				6B227B4B210AED5F00A1A8CC /* CustomNSOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +460,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39ZDP7H4DZ;
 				INFOPLIST_FILE = MultiThread/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +478,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 39ZDP7H4DZ;
 				INFOPLIST_FILE = MultiThread/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
