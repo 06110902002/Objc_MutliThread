@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.readWriteMgr = [[ReaderWrite alloc] init];
+    self.writeFirstMgr = [[WriteFirst alloc] init];
     [self initView];
 }
 
@@ -40,6 +41,22 @@
     
     self.readQueue = dispatch_queue_create("producer", DISPATCH_QUEUE_CONCURRENT);  //读者可以使用 并发队列，不限定读者的顺序
     self.writeQueue = dispatch_queue_create("consumer", DISPATCH_QUEUE_SERIAL);
+    
+    
+    UIButton* button4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setTitle:@"写优先——读数据" forState:UIControlStateNormal];
+    button4.frame = CGRectMake(240, 80, 200, 40);
+    button4.backgroundColor = [UIColor brownColor];
+    [button4 addTarget:self action:@selector(writeFirst_Read:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button4];
+    
+    
+    UIButton* button5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button5 setTitle:@"写优先——写数据" forState:UIControlStateNormal];
+    button5.frame = CGRectMake(240, 180, 200, 40);
+    button5.backgroundColor = [UIColor brownColor];
+    [button5 addTarget:self action:@selector(writeFirst_Write:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button5];
 }
 
 
@@ -73,6 +90,32 @@
     
 }
 
+
+-(void) writeFirst_Read:(UIButton*) button{
+    
+    for(int i = 0; i < 5; i ++){
+        dispatch_async(self.readQueue,  ^{
+            while(1){
+                [self.writeFirstMgr readData];
+                sleep(1);
+            }
+            
+        });
+    }
+    
+}
+
+-(void) writeFirst_Write:(UIButton*) button{
+    for(int i = 0; i < 5; i ++){
+        dispatch_async(self.writeQueue,  ^{
+            while(1){
+                [self.writeFirstMgr writeData];
+                sleep(1);
+            }
+            
+        });
+    }
+}
 
 /*
 #pragma mark - Navigation

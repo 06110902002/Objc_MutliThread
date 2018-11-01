@@ -22,11 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(assign,nonatomic) int board;           //临界资源
 @property(strong,nonatomic) dispatch_semaphore_t rmutex;         //读者计数器 互斥信号量
-@property(strong,nonatomic) dispatch_semaphore_t wmutex;         //写者-读者， 写者-写者
+@property(strong,nonatomic) dispatch_semaphore_t wmutex;         //写者-读者，写者-写者
 @property(nonatomic,assign) int readcount;
 
 -(void) readData;
-
 -(void) writeData;
 
 @end
