@@ -18,6 +18,8 @@
 		6B227B31210AA61400A1A8CC /* MultiThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B30210AA61400A1A8CC /* MultiThreadTests.m */; };
 		6B227B3C210AA61400A1A8CC /* MultiThreadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B3B210AA61400A1A8CC /* MultiThreadUITests.m */; };
 		6B227B4B210AED5F00A1A8CC /* CustomNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B227B4A210AED5F00A1A8CC /* CustomNSOperation.m */; };
+		6BEDF4942189BF1900ADDE60 /* ProComsumerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDF4932189BF1900ADDE60 /* ProComsumerModel.m */; };
+		6BEDF4972189CF4100ADDE60 /* BaseRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDF4962189CF4100ADDE60 /* BaseRoom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		6B227B3D210AA61400A1A8CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B227B49210AED5F00A1A8CC /* CustomNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNSOperation.h; sourceTree = "<group>"; };
 		6B227B4A210AED5F00A1A8CC /* CustomNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNSOperation.m; sourceTree = "<group>"; };
+		6BEDF4922189BF1900ADDE60 /* ProComsumerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProComsumerModel.h; sourceTree = "<group>"; };
+		6BEDF4932189BF1900ADDE60 /* ProComsumerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProComsumerModel.m; sourceTree = "<group>"; };
+		6BEDF4952189CF4100ADDE60 /* BaseRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRoom.h; sourceTree = "<group>"; };
+		6BEDF4962189CF4100ADDE60 /* BaseRoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRoom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		6B227B16210AA61200A1A8CC /* MultiThread */ = {
 			isa = PBXGroup;
 			children = (
+				6BEDF4912189BEA500ADDE60 /* produce_comsumer */,
 				6B0EDF15210B0BDA00B71F83 /* Dispatch_Queues */,
 				6B227B17210AA61200A1A8CC /* AppDelegate.h */,
 				6B227B18210AA61200A1A8CC /* AppDelegate.m */,
@@ -153,6 +160,17 @@
 				6B227B3D210AA61400A1A8CC /* Info.plist */,
 			);
 			path = MultiThreadUITests;
+			sourceTree = "<group>";
+		};
+		6BEDF4912189BEA500ADDE60 /* produce_comsumer */ = {
+			isa = PBXGroup;
+			children = (
+				6BEDF4922189BF1900ADDE60 /* ProComsumerModel.h */,
+				6BEDF4932189BF1900ADDE60 /* ProComsumerModel.m */,
+				6BEDF4952189CF4100ADDE60 /* BaseRoom.h */,
+				6BEDF4962189CF4100ADDE60 /* BaseRoom.m */,
+			);
+			path = produce_comsumer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +308,9 @@
 				6B0EDF14210B0BCE00B71F83 /* VC2ViewController.m in Sources */,
 				6B227B27210AA61400A1A8CC /* main.m in Sources */,
 				6B227B19210AA61200A1A8CC /* AppDelegate.m in Sources */,
+				6BEDF4972189CF4100ADDE60 /* BaseRoom.m in Sources */,
 				6B227B4B210AED5F00A1A8CC /* CustomNSOperation.m in Sources */,
+				6BEDF4942189BF1900ADDE60 /* ProComsumerModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

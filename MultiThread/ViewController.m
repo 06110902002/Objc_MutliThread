@@ -10,6 +10,7 @@
 #import "CustomNSOperation.h"
 #import "BingFaNSOperation.h"
 #import "VC2ViewController.h"
+#import "ProComsumerModel.h"
 
 @interface ViewController ()
 
@@ -39,6 +40,14 @@
     button2.backgroundColor = [UIColor brownColor];
     [button2 addTarget:self action:@selector(goDispathQueue:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
+    
+    
+    UIButton* button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setTitle:@"测试信号量实现生产者消费模式" forState:UIControlStateNormal];
+    button3.frame = CGRectMake(20, 180, 200, 40);
+    button3.backgroundColor = [UIColor brownColor];
+    [button3 addTarget:self action:@selector(proComsumer:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
 }
 
 
@@ -148,6 +157,9 @@
 }
 
 
+-(void) proComsumer:(UIButton*)button{
+    [self presentViewController:[[ProComsumerModel alloc] init]  animated:YES completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning {
