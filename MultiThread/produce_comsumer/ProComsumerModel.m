@@ -64,47 +64,47 @@
 -(void) producter{
     
 //    //创建10个生产者持续生产皮鞋
-//    for (int i = 0; i < 5; i++) {
-//        dispatch_async(self.producerQueue,  ^{
-//            while(1){
-//                NSString* t = [NSString stringWithFormat:@"nike"];
-//                [self.baseroom produce:t];
-//                sleep(1);
-//            }
+    for (int i = 0; i < 5; i++) {
+        dispatch_async(self.producerQueue,  ^{
+            while(1){
+                NSString* t = [NSString stringWithFormat:@"nike"];
+                [self.baseroom produce:t];
+                sleep(1);
+            }
+
+        });
+    }
+    
+//    dispatch_async(self.producerQueue,  ^{
+//        while(1){
+//            NSString* t = [NSString stringWithFormat:@"nike"];
+//            [self.baseroom produce:t];
+//            sleep(3);
+//        }
 //
-//        });
-//    }
-    
-    dispatch_async(self.producerQueue,  ^{
-        while(1){
-            NSString* t = [NSString stringWithFormat:@"nike"];
-            [self.baseroom produce:t];
-            sleep(3);
-        }
-        
-    });
-    
+//    });
+//
 }
 
 -(void)comsumer{
     
-//    for (int i = 0; i < 5; i++){
-//        dispatch_async(self.consumerQueue, ^{
-//            while(1){
-//                [self.baseroom comsumer];
-//                sleep(1);
-//            }
-//
-//        });
-//    }
+    for (int i = 0; i < 5; i++){
+        dispatch_async(self.consumerQueue, ^{
+            while(1){
+                [self.baseroom comsumer];
+                sleep(1);
+            }
+
+        });
+    }
     
-    dispatch_async(self.consumerQueue, ^{
-        while(1){
-            [self.baseroom comsumer];
-            sleep(1);
-        }
-        
-    });
+//    dispatch_async(self.consumerQueue, ^{
+//        while(1){
+//            [self.baseroom comsumer];
+//            sleep(1);
+//        }
+//
+//    });
     
     
 }

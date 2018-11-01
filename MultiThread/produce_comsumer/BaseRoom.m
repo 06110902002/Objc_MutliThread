@@ -42,6 +42,7 @@
         
         if(maxSpaceCount != 0){
             NSLog(@"43----------仓库10个空间已经使用完，生产者处于等待：仓库容量:%lu",[self.baseList count]);
+            dispatch_semaphore_signal(self.mutex);          //生产完了释放临界区的访问锁
         }else{
             [self.baseList addObject:e];
             NSLog(@"40---------生产鞋子%@:w仓库目前有：%lu",e,[self.baseList count]);
@@ -63,6 +64,7 @@
         long avableCount = dispatch_semaphore_wait(self.comsumer_sem, 5 * NSEC_PER_SEC);  //再判断 仓库是否还有可取，如果有物品，则取一个出来，否则t等待
         if(avableCount != 0){
             NSLog(@"59----------空仓，消费者处于等待");
+            dispatch_semaphore_signal(self.mutex);          //生产完了释放临界区的访问锁
         }else{
             e = [self.baseList objectAtIndex:[self.baseList count] -1];
             [self.baseList removeLastObject];
