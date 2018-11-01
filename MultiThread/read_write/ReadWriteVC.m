@@ -110,7 +110,7 @@
         dispatch_async(self.writeQueue,  ^{
             while(1){
                 [self.writeFirstMgr writeData];
-                sleep(1);
+                sleep(2);
             }
             
         });
