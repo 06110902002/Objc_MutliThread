@@ -11,6 +11,7 @@
 #import "BingFaNSOperation.h"
 #import "VC2ViewController.h"
 #import "ProComsumerModel.h"
+#import "ReadWriteVC.h"
 
 @interface ViewController ()
 
@@ -48,6 +49,13 @@
     button3.backgroundColor = [UIColor brownColor];
     [button3 addTarget:self action:@selector(proComsumer:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
+    
+    UIButton* button4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setTitle:@"测试信号量实现读写者模式" forState:UIControlStateNormal];
+    button4.frame = CGRectMake(20, 240, 200, 40);
+    button4.backgroundColor = [UIColor brownColor];
+    [button4 addTarget:self action:@selector(readWrite:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button4];
 }
 
 
@@ -159,6 +167,10 @@
 
 -(void) proComsumer:(UIButton*)button{
     [self presentViewController:[[ProComsumerModel alloc] init]  animated:YES completion:nil];
+}
+
+-(void) readWrite:(UIButton*)button{
+    [self presentViewController:[[ReadWriteVC alloc] init]  animated:YES completion:nil];
 }
 
 
