@@ -45,12 +45,13 @@
         self.readcount ++;
         dispatch_semaphore_signal(self.rmutex);  //释放读者计数器的锁
         NSLog(@"50----------读者开始读数据:%d",self.board);
-        dispatch_semaphore_wait(self.rmutex,  5 * NSEC_PER_SEC);
-        self.readcount --;
-        if(self.readcount == 0){
+        
+        dispatch_semaphore_wait(self.rmutex,  5 * NSEC_PER_SEC);    //读完数据之后还需要再申请使用一次读者之间的x互斥锁，
+        self.readcount --;          //将读者计数器 减一操作
+        if(self.readcount == 0){    //如果是最后一个t读者操作，需要通知 写者可以 进行写操作了
             dispatch_semaphore_signal(self.wmutex);
         }
-        dispatch_semaphore_signal(self.rmutex);
+        dispatch_semaphore_signal(self.rmutex); //最后再释放 读者之间的锁
     }
     
   

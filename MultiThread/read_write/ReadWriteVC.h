@@ -20,11 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface ReadWriteVC : UIViewController
 
-//写者线程跑的队列,这个队列可以控制生产者的执行是并行还是串行
+//写者线程跑的队列,这个队列可以控制读者的执行是并行还是串行
 @property(strong,nonatomic) dispatch_queue_t readQueue;
 
 
-//读者线程跑的队列，这个队列可以控制消费者的执行是并行还是串行
+//读者线程跑的队列，这个队列可以控制写者的执行是并行还是串行
 @property(strong,nonatomic) dispatch_queue_t writeQueue;
 
 
