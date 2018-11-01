@@ -19,6 +19,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.readWriteMgr = [[ReaderWrite alloc] init];
     self.writeFirstMgr = [[WriteFirst alloc] init];
+    self.readWriteFair = [[ReadWriteFair alloc] init];
     [self initView];
 }
 
@@ -26,7 +27,7 @@
     
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     [button2 setTitle:@"读数据" forState:UIControlStateNormal];
-    button2.frame = CGRectMake(20, 80, 200, 40);
+    button2.frame = CGRectMake(20, 80, 150, 40);
     button2.backgroundColor = [UIColor brownColor];
     [button2 addTarget:self action:@selector(read:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
@@ -34,7 +35,7 @@
     
     UIButton* button3 = [UIButton buttonWithType:UIButtonTypeCustom];
     [button3 setTitle:@"写数据" forState:UIControlStateNormal];
-    button3.frame = CGRectMake(20, 180, 200, 40);
+    button3.frame = CGRectMake(20, 180, 150, 40);
     button3.backgroundColor = [UIColor brownColor];
     [button3 addTarget:self action:@selector(write:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
@@ -44,19 +45,35 @@
     
     
     UIButton* button4 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button4 setTitle:@"写优先——读数据" forState:UIControlStateNormal];
-    button4.frame = CGRectMake(240, 80, 200, 40);
+    [button4 setTitle:@"写优先—读数据" forState:UIControlStateNormal];
+    button4.frame = CGRectMake(200, 80, 150, 40);
     button4.backgroundColor = [UIColor brownColor];
     [button4 addTarget:self action:@selector(writeFirst_Read:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
     
     
     UIButton* button5 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button5 setTitle:@"写优先——写数据" forState:UIControlStateNormal];
-    button5.frame = CGRectMake(240, 180, 200, 40);
+    [button5 setTitle:@"写优先—写数据" forState:UIControlStateNormal];
+    button5.frame = CGRectMake(200, 180, 150, 40);
     button5.backgroundColor = [UIColor brownColor];
     [button5 addTarget:self action:@selector(writeFirst_Write:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button5];
+    
+    
+    UIButton* button6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button6 setTitle:@"公平竞争读数据" forState:UIControlStateNormal];
+    button6.frame = CGRectMake(20, 280, 150, 40);
+    button6.backgroundColor = [UIColor brownColor];
+    [button6 addTarget:self action:@selector(fair_Read:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button6];
+    
+    
+    UIButton* button7 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button7 setTitle:@"公平竞争写数据" forState:UIControlStateNormal];
+    button7.frame = CGRectMake(20, 340, 150, 40);
+    button7.backgroundColor = [UIColor brownColor];
+    [button7 addTarget:self action:@selector(fair_Write:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button7];
 }
 
 
@@ -110,6 +127,33 @@
         dispatch_async(self.writeQueue,  ^{
             while(1){
                 [self.writeFirstMgr writeData];
+                sleep(2);
+            }
+            
+        });
+    }
+}
+
+
+-(void) fair_Read:(UIButton*) button{
+    
+    for(int i = 0; i < 5; i ++){
+        dispatch_async(self.readQueue,  ^{
+            while(1){
+                [self.readWriteFair readData];
+                sleep(1);
+            }
+            
+        });
+    }
+    
+}
+
+-(void) fair_Write:(UIButton*) button{
+    for(int i = 0; i < 5; i ++){
+        dispatch_async(self.writeQueue,  ^{
+            while(1){
+                [self.readWriteFair writeData];
                 sleep(2);
             }
             

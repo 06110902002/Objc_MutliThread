@@ -21,6 +21,7 @@
 		6B2A1DA9218AAF1A00F1B8FC /* ReadWriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A1DA8218AAF1A00F1B8FC /* ReadWriteVC.m */; };
 		6B2A1DAC218AB01500F1B8FC /* ReaderWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A1DAB218AB01500F1B8FC /* ReaderWrite.m */; };
 		6B2A1DAF218AE71800F1B8FC /* WriteFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A1DAE218AE71800F1B8FC /* WriteFirst.m */; };
+		6B2A1DB2218B1FD000F1B8FC /* ReadWriteFair.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2A1DB1218B1FD000F1B8FC /* ReadWriteFair.m */; };
 		6BEDF4942189BF1900ADDE60 /* ProComsumerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDF4932189BF1900ADDE60 /* ProComsumerModel.m */; };
 		6BEDF4972189CF4100ADDE60 /* BaseRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDF4962189CF4100ADDE60 /* BaseRoom.m */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		6B2A1DAB218AB01500F1B8FC /* ReaderWrite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderWrite.m; sourceTree = "<group>"; };
 		6B2A1DAD218AE71800F1B8FC /* WriteFirst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WriteFirst.h; sourceTree = "<group>"; };
 		6B2A1DAE218AE71800F1B8FC /* WriteFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteFirst.m; sourceTree = "<group>"; };
+		6B2A1DB0218B1FD000F1B8FC /* ReadWriteFair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadWriteFair.h; sourceTree = "<group>"; };
+		6B2A1DB1218B1FD000F1B8FC /* ReadWriteFair.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadWriteFair.m; sourceTree = "<group>"; };
 		6BEDF4922189BF1900ADDE60 /* ProComsumerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProComsumerModel.h; sourceTree = "<group>"; };
 		6BEDF4932189BF1900ADDE60 /* ProComsumerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProComsumerModel.m; sourceTree = "<group>"; };
 		6BEDF4952189CF4100ADDE60 /* BaseRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRoom.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				6B2A1DAB218AB01500F1B8FC /* ReaderWrite.m */,
 				6B2A1DAD218AE71800F1B8FC /* WriteFirst.h */,
 				6B2A1DAE218AE71800F1B8FC /* WriteFirst.m */,
+				6B2A1DB0218B1FD000F1B8FC /* ReadWriteFair.h */,
+				6B2A1DB1218B1FD000F1B8FC /* ReadWriteFair.m */,
 			);
 			path = read_write;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				6B2A1DAF218AE71800F1B8FC /* WriteFirst.m in Sources */,
 				6B227B4B210AED5F00A1A8CC /* CustomNSOperation.m in Sources */,
 				6BEDF4942189BF1900ADDE60 /* ProComsumerModel.m in Sources */,
+				6B2A1DB2218B1FD000F1B8FC /* ReadWriteFair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

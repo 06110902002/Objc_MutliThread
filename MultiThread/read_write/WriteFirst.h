@@ -18,6 +18,11 @@
 //3.设置计数器writeCount来统计当前阻塞的写者进程的数目，设置信号量writeCountSignal完成对writeCount计数器资源的互斥访问。
 //4.设置计数器readCount来统计访问临界资源的读者数目，设置信号量readCountSignal完成对readCount计数器资源的互斥访问。
 
+//核心思想 
+//每个读进程最开始都要申请一下 rmutex 信号量，
+//之后在真正做读操作前即让出(使得写进程可以随时申请到 rmutex)。
+//而只有第一个写进程需要申请 rmutex，之后就一直占着不放了，
+//直到所有写进程都完成后才让出。等于只要有写进程提出申请就禁止读进程排队，变相提高了写进程的优先级。
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

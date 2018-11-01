@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ReaderWrite.h"
 #import "WriteFirst.h"
+#import "ReadWriteFair.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong,nonatomic) ReaderWrite* readWriteMgr;
 
 @property(nonatomic,strong) WriteFirst* writeFirstMgr;
+
+@property(nonatomic,strong) ReadWriteFair* readWriteFair;
 
 @end
 
