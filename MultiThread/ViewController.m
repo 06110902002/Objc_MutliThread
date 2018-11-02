@@ -182,4 +182,9 @@
 -(void) testGitTag{
     NSLog(@"183------------");
 }
+
+-(void) testV3{
+    NSLog(@"187--------this v3.0 test code");
+    
+}
 @end
